@@ -3,7 +3,7 @@ export default defineEventHandler((event) => {
   
     const mainDomain = ["localhost:3003", "moin.so"]
   
-    if (!mainDomain.includes(hostname)) {
+    if (!mainDomain.includes(hostname) && hostname.includes("www")) {
       const currentHost =
         process.env.NODE_ENV === "production"
           ? hostname.replace(`.moin.so`, "")
