@@ -1,12 +1,12 @@
 export default defineEventHandler((event) => {
-    const hostname = getRequestHeader(event, 'host') || "keypress.blog"
+    const hostname = getRequestHeader(event, 'host') || "moin.so"
   
-    const mainDomain = ["localhost:3003", "keypress.blog"]
+    const mainDomain = ["localhost:3003", "moin.so"]
   
     if (!mainDomain.includes(hostname)) {
       const currentHost =
-        process.env.NODE_ENV === "production" && process.env.VERCEL === "1"
-          ? hostname.replace(`.keypress.blog`, "")
+        process.env.NODE_ENV === "production"
+          ? hostname.replace(`.moin.so`, "")
           : hostname.replace(`.localhost:3003`, "")
   
       console.log({ currentHost })
