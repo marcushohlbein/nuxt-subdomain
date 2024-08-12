@@ -8,10 +8,10 @@ export default <RouterOptions>{
     if (ssrContext?.event.context.subdomain) subdomain.value = ssrContext?.event.context.subdomain
 
     if (subdomain.value) {
-      const userRoute = _routes.filter((i) => i.path.includes("/domain"))
+      const userRoute = _routes.filter((i) => i.path.includes("/app"))
       const userRouteMapped = userRoute.map((i) => ({
         ...i,
-        path: i.path === "/domain" ? i.path.replace("/domain", "/") : i.path.replace("/domain/", "/"),
+        path: i.path === "/app" ? i.path.replace("/app", "/") : i.path.replace("/app/", "/"),
       }))
 
       return userRouteMapped
