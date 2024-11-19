@@ -7,6 +7,8 @@ export default <RouterOptions>{
     const subdomain = useSubdomain()
     if (ssrContext?.event.context.subdomain) subdomain.value = ssrContext?.event.context.subdomain
 
+    console.log("subdomain", subdomain.value)
+
     if (subdomain.value) {
       const userRoute = _routes.filter((i) => i.path.includes("/app"))
       const userRouteMapped = userRoute.map((i) => ({
