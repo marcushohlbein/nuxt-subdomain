@@ -10,10 +10,10 @@ export default <RouterOptions>{
     console.log("subdomain", subdomain.value)
 
     if (subdomain.value) {
-      const userRoute = _routes.filter((i) => i.path.includes("/app"))
+      const userRoute = _routes.filter((i) => i.path.includes("/domain"))
       const userRouteMapped = userRoute.map((i) => ({
         ...i,
-        path: i.path === "/app" ? i.path.replace("/app", "/") : i.path.replace("/app/", "/"),
+        path: i.path === "/domain" ? i.path.replace("/domain", "/") : i.path.replace("/domain/", "/"),
       }))
 
       return userRouteMapped
